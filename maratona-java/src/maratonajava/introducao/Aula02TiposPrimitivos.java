@@ -1,5 +1,7 @@
 package maratonajava.introducao;
 
+import java.sql.SQLOutput;
+
 public class Aula02TiposPrimitivos {
     public static void main(String[] args) {
         //int, double, float, char, byte, short, long, boolean
@@ -16,6 +18,11 @@ public class Aula02TiposPrimitivos {
 
         System.out.println(nome);
         System.out.println("A idade é: " + age + " anos.");
+        System.out.println("O número é: " + number);
+        
         System.out.println(verdadeiro);
+        System.out.println(falso);
+        System.out.println(caractere);
+
     }
 }
