@@ -19,7 +19,10 @@ public class Aula02TiposPrimitivos {
         System.out.println(nome);
         System.out.println("A idade é: " + age + " anos.");
         System.out.println("O número é: " + number);
-        
+        System.out.println("O sálario é: " + salaryDouble);
+        System.out.println("O sálario é: " + salaryFloat);
+        System.out.println("A idade é: " + ageByte);
+        System.out.println("A idade é: " + ageShort);
         System.out.println(verdadeiro);
         System.out.println(falso);
         System.out.println(caractere);
