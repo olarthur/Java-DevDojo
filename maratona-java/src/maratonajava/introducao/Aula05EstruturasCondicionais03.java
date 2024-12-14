@@ -9,8 +9,7 @@ public class Aula05EstruturasCondicionais03 {
         String msnNaoDoar = "Não doar";
 
         String resultado = salario > 5000 ? msnDoar : msnNaoDoar;
-
-        System.out.println(resultado);
         
+        System.out.println(resultado);
     }
 }
