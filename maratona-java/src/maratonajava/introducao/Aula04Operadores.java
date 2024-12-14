@@ -51,5 +51,21 @@ public class Aula04Operadores {
         r = (x < y ^ y == z) ? true : false;
         r = (x < y ^ y < z) ? true : false;
         System.out.println(r);
+        System.out.println();
+
+        // Operadores de atribuição '=' '+=' '-=' '*=' '/=' '%='
+
+        double bonus = 1800;
+        bonus += 1000; // bonus = bonus + 1000
+        bonus -= 1000; // bonus = bonus - 1000
+        bonus *= 2; // bonus = bonus * 2
+        bonus /= 2; // bonus = bonus / 2
+        System.out.println(bonus);
+
+        // '++' '--'
+        int contador = 0;
+        contador ++;
+        contador --;
+        System.out.println(contador);
     }
 }
