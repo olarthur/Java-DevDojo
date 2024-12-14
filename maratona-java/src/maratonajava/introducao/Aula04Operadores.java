@@ -33,6 +33,7 @@ public class Aula04Operadores {
         System.out.println("Dez é menor que vinte? " + isDezMenorQVinte);
         System.out.println("Dez é igual que vinte? " + isDezIgualVinte);
         System.out.println("Dez é diferente de vinte? " + isDezDifVinte);
+        System.out.println();
 
         // Operadores lógicos '&&' = AND , '||' = OR , '^' = XOR , '!' = Negação
 
@@ -43,11 +44,11 @@ public class Aula04Operadores {
         y = 7;
         z = 12;
 
-        // r = (x < y && y < z) ? true : false; return true
-        // r = (x < y && y == z) ? true : false; return false
-        // r = (x < y || y == z) ? true : false; return true
-        // r = (x == y || y > z) ? true : false; return false
-        // r = (x < y ^ y == z) ? true : false; return true
+        r = (x < y && y < z) ? true : false;
+        r = (x < y && y == z) ? true : false;
+        r = (x < y || y == z) ? true : false;
+        r = (x == y || y > z) ? true : false;
+        r = (x < y ^ y == z) ? true : false;
         r = (x < y ^ y < z) ? true : false;
         System.out.println(r);
     }
