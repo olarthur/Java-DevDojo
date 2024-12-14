@@ -30,9 +30,9 @@ public class Aula04Operadores {
         boolean isDezIgualVinte = 10 == 20;
         boolean isDezDifVinte = 10 != 20;
         System.out.println("Dez é maior que vinte? " + isDezMaiorQVinte);
-        System.out.println("Dez é  que vinte? " + isDezMenorQVinte);
-        System.out.println("Dez é maior que vinte? " + isDezIgualVinte);
-        System.out.println("Dez é maior que vinte? " + isDezDifVinte);
+        System.out.println("Dez é menor que vinte? " + isDezMenorQVinte);
+        System.out.println("Dez é igual que vinte? " + isDezIgualVinte);
+        System.out.println("Dez é diferente de vinte? " + isDezDifVinte);
 
     }
 }
