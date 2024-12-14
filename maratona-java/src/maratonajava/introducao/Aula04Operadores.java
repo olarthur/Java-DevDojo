@@ -15,10 +15,24 @@ public class Aula04Operadores {
         System.out.println(sub);
         System.out.println(multi);
         System.out.println(div);
+        System.out.println();
 
         // Módulo '%' = resto da divisão
 
         int resto = 21 % 7;
         System.out.println(resto);
+        System.out.println();
+
+        // Operadores lógicos '<' '>' '<=' '>=' '==' '!='
+
+        boolean isDezMaiorQVinte = 10 > 20;
+        boolean isDezMenorQVinte = 10 < 20;
+        boolean isDezIgualVinte = 10 == 20;
+        boolean isDezDifVinte = 10 != 20;
+        System.out.println("Dez é maior que vinte? " + isDezMaiorQVinte);
+        System.out.println("Dez é  que vinte? " + isDezMenorQVinte);
+        System.out.println("Dez é maior que vinte? " + isDezIgualVinte);
+        System.out.println("Dez é maior que vinte? " + isDezDifVinte);
+
     }
 }
