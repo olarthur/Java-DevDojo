@@ -11,8 +11,8 @@ public class Aula08ArraysMultidimensionais02 {
         arrayInt[1] = new int[]{1,2,2,3,5,6,7};
         arrayInt[2] = new int[4];
         arrayInt[3] = array;
-    
 
+        
         for (int[] arrayBase : arrayInt){
             System.out.println("\n--------");
             for (int num : arrayBase) {
