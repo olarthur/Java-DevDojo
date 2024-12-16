@@ -34,6 +34,13 @@ public class Calculadora {
             return;
         }
         System.out.println(num1 / num2);
+    }
 
+    public void alteraDoisNumeros(int num1, int num2){
+        num1 = 14;
+        num2 = 28;
+        System.out.println("Altera Números");
+        System.out.println("Num1: " + num1);
+        System.out.println("Num2: " + num2);
     }
 }
