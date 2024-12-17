@@ -5,16 +5,24 @@ public class Series {
     private String tipo;
     private int episodios;
     private String genero;
+    private String streaming;
 
     public Series(String nome, String tipo, int episodios, String genero) {
+        this();
         this.nome = nome;
         this.tipo = tipo;
         this.episodios = episodios;
         this.genero = genero;
     }
 
-    public Series(){
 
+    public Series(String nome, String tipo, int episodios, String genero, String streaming) {
+        this(nome, tipo, episodios, genero);
+        this.streaming = streaming;
+    }
+
+    public Series(){
+        System.out.println("Construtor sem argumentos.");
     }
 
     public void imprime() {
@@ -22,6 +30,7 @@ public class Series {
         System.out.println(this.tipo);
         System.out.println(this.episodios);
         System.out.println(this.genero);
+        System.out.println(this.streaming);
     }
 
     public void setNome(String nome) {
@@ -54,5 +63,13 @@ public class Series {
 
     public String getGenero() {
         return this.genero;
+    }
+
+    public void setStreaming(String streaming){
+        this.streaming = streaming;
+    }
+
+    public String getStreaming(){
+        return this.streaming;
     }
 }
