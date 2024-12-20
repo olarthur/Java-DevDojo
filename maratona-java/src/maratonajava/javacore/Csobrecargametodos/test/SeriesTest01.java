@@ -1,6 +1,6 @@
-package maratonajava.javacore.sobrecargametodos.test;
+package maratonajava.javacore.Csobrecargametodos.test;
 
-import maratonajava.javacore.sobrecargametodos.dominio.Series;
+import maratonajava.javacore.Csobrecargametodos.dominio.Series;
 
 public class SeriesTest01 {
     public static void main(String[] args){

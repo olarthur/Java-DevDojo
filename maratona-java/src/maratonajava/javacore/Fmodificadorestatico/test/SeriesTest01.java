@@ -1,6 +1,6 @@
-package maratonajava.javacore.modificadorestatico.test;
+package maratonajava.javacore.Fmodificadorestatico.test;
 
-import maratonajava.javacore.modificadorestatico.dominio.Series;
+import maratonajava.javacore.Fmodificadorestatico.dominio.Series;
 
 public class SeriesTest01 {
     public static void main(String[] args){

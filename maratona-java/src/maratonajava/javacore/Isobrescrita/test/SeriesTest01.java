@@ -1,6 +1,6 @@
-package maratonajava.javacore.sobrescrita.test;
+package maratonajava.javacore.Isobrescrita.test;
 
-import maratonajava.javacore.sobrescrita.dominio.Series;
+import maratonajava.javacore.Isobrescrita.dominio.Series;
 
 public class SeriesTest01 {
     public static void main(String[] args) {

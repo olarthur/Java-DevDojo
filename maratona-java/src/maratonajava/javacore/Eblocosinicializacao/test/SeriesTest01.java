@@ -1,6 +1,6 @@
-package maratonajava.javacore.blocosinicializacao.test;
+package maratonajava.javacore.Eblocosinicializacao.test;
 
-import maratonajava.javacore.blocosinicializacao.dominio.Series;
+import maratonajava.javacore.Eblocosinicializacao.dominio.Series;
 
 public class SeriesTest01 {
     public static void main(String[] args){

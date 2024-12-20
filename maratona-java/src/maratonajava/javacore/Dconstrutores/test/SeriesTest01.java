@@ -1,6 +1,6 @@
-package maratonajava.javacore.construtores.test;
+package maratonajava.javacore.Dconstrutores.test;
 
-import maratonajava.javacore.construtores.dominio.Series;
+import maratonajava.javacore.Dconstrutores.dominio.Series;
 
 public class SeriesTest01 {
     public static void main(String[] args){

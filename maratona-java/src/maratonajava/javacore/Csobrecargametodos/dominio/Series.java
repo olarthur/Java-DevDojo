@@ -1,4 +1,4 @@
-package maratonajava.javacore.sobrecargametodos.dominio;
+package maratonajava.javacore.Csobrecargametodos.dominio;
 
 public class Series {
     private String nome;

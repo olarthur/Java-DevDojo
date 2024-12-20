@@ -1,4 +1,4 @@
-package maratonajava.javacore.associacao.exercicio.dominio;
+package maratonajava.javacore.Gassociacao.exercicio.dominio;
 
 public class Seminario {
     private String titulo;

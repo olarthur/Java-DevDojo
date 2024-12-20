@@ -1,4 +1,4 @@
-package maratonajava.javacore.construtores.dominio;
+package maratonajava.javacore.Dconstrutores.dominio;
 
 public class Series {
     private String nome;

@@ -1,4 +1,4 @@
-package maratonajava.javacore.blocosinicializacao.dominio;
+package maratonajava.javacore.Eblocosinicializacao.dominio;
 
 public class Series {
     private String nome;
