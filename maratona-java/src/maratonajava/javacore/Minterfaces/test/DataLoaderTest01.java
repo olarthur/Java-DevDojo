@@ -1,5 +1,6 @@
 package maratonajava.javacore.Minterfaces.test;
 
+import maratonajava.javacore.Minterfaces.dominio.DataLoader;
 import maratonajava.javacore.Minterfaces.dominio.DatabaseLoader;
 import maratonajava.javacore.Minterfaces.dominio.FileLoader;
 
@@ -16,5 +17,8 @@ public class DataLoaderTest01 {
 
         databaseLoader.checkPermission();
         fileLoader.checkPermission();
+
+        DataLoader.retriveDataSize();
+        DatabaseLoader.retriveDataSize();
     }
 }
