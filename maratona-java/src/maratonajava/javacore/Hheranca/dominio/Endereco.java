@@ -1,4 +1,4 @@
-package maratonajava.javacore.heranca.dominio;
+package maratonajava.javacore.Hheranca.dominio;
 
 public class Endereco {
     private String rua;

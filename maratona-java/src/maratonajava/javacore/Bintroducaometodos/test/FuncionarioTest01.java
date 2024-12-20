@@ -1,6 +1,6 @@
-package maratonajava.javacore.introducaometodos.test;
+package maratonajava.javacore.Bintroducaometodos.test;
 
-import maratonajava.javacore.introducaometodos.dominio.Funcionario;
+import maratonajava.javacore.Bintroducaometodos.dominio.Funcionario;
 
 public class FuncionarioTest01 {
     public static void main(String[] args) {

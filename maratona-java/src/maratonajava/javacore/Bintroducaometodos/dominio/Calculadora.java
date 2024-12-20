@@ -1,4 +1,4 @@
-package maratonajava.javacore.introducaometodos.dominio;
+package maratonajava.javacore.Bintroducaometodos.dominio;
 
 public class Calculadora {
 

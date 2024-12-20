@@ -1,6 +1,6 @@
-package maratonajava.javacore.introducaoclasses.test;
+package maratonajava.javacore.Aintroducaoclasses.test;
 
-import maratonajava.javacore.introducaoclasses.dominio.Professor;
+import maratonajava.javacore.Aintroducaoclasses.dominio.Professor;
 
 public class ProfessorTest01 {
     public static void main(String[] args) {

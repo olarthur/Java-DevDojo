@@ -1,4 +1,4 @@
-package maratonajava.javacore.sobrescrita.dominio;
+package maratonajava.javacore.Isobrescrita.dominio;
 
 public class Series {
     private String nome;

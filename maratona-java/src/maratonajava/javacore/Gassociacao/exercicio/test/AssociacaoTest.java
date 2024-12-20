@@ -1,9 +1,9 @@
-package maratonajava.javacore.associacao.exercicio.test;
+package maratonajava.javacore.Gassociacao.exercicio.test;
 
-import maratonajava.javacore.associacao.exercicio.dominio.Aluno;
-import maratonajava.javacore.associacao.exercicio.dominio.Local;
-import maratonajava.javacore.associacao.exercicio.dominio.Professor;
-import maratonajava.javacore.associacao.exercicio.dominio.Seminario;
+import maratonajava.javacore.Gassociacao.exercicio.dominio.Aluno;
+import maratonajava.javacore.Gassociacao.exercicio.dominio.Local;
+import maratonajava.javacore.Gassociacao.exercicio.dominio.Professor;
+import maratonajava.javacore.Gassociacao.exercicio.dominio.Seminario;
 
 public class AssociacaoTest {
     public static void main(String[] args) {
