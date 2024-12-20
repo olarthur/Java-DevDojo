@@ -1,7 +1,6 @@
 package maratonajava.javacore.Lclassesabstratas.test;
 
 import maratonajava.javacore.Lclassesabstratas.dominio.Desenvolvedor;
-import maratonajava.javacore.Lclassesabstratas.dominio.Funcionario;
 import maratonajava.javacore.Lclassesabstratas.dominio.Gerente;
 
 public class FuncionarioTest01 {
