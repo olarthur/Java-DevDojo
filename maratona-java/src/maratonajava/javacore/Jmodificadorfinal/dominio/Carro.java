@@ -3,22 +3,8 @@ package maratonajava.javacore.Jmodificadorfinal.dominio;
 public class Carro {
     private String nome;
     public static final double VELOCIDADE_LIMITE = 250;
+    public final Comprador COMPRADOR = new Comprador();
 
-    /* static {
-    *   VELOCIDADE_LIMITE = 250;
-    * }
-    * */
-
-    /* {
-    *   VELOCIDADE_LIMITE = 250;
-    *  }
-    * */
-
-    /*  public Carro() {
-    *    VELOCIDADE_LIMITE = 250;
-    *  }
-    * */
-    
     public String getNome() {
         return nome;
     }
@@ -26,4 +12,23 @@ public class Carro {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+
+
+    // Metodos para chamar modificador final
+
+    /* static {
+     *   VELOCIDADE_LIMITE = 250;
+     * }
+     * */
+
+    /* {
+     *   VELOCIDADE_LIMITE = 250;
+     *  }
+     * */
+
+    /*  public Carro() {
+     *    VELOCIDADE_LIMITE = 250;
+     *  }
+     * */
 }
