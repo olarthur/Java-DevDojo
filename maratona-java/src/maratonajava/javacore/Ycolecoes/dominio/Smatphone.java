@@ -25,6 +25,17 @@ public class Smatphone {
         return serialNumber != null && serialNumber.equals(smatphone.serialNumber);
     }
 
+    /*
+     se x.equals(y) == true, y.hashCode() == x.hashCode()
+     y.hashCode() == x.hashCode() não necessariamente y.equals(x) tem que ser true
+     x.equals(y) == false
+     y.hashCode() != x.hashCode() x.equals(y) deverá ser false
+    */
+    @Override
+    public int hashCode() {
+        return serialNumber == null ? 0 : this.serialNumber.hashCode();
+    }
+
     public String getSerialNumber() {
         return serialNumber;
     }
