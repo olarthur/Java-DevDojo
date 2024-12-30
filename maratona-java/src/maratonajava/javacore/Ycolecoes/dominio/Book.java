@@ -6,6 +6,7 @@ public class Book implements Comparable<Book>{
     private Long id;
     private String name;
     private double price;
+    private int amount;
 
     public Book(Long id, String name, double price) {
         Objects.requireNonNull(id, "Id não pode ser null");
@@ -13,6 +14,11 @@ public class Book implements Comparable<Book>{
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public Book(Long id, String name, double price, int amount) {
+        this(id, name, price);
+        this.amount = amount;
     }
 
     @Override
@@ -33,6 +39,7 @@ public class Book implements Comparable<Book>{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", quantidade=" + amount +
                 '}';
     }
 
@@ -59,6 +66,14 @@ public class Book implements Comparable<Book>{
         */
 
         return this.name.compareTo(anotherBook.getName()); // organiza por nome
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public Long getId() {
