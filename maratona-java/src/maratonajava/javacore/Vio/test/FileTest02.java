@@ -9,7 +9,7 @@ public class FileTest02 {
         boolean isDirectoryCreated = fileDirectory.mkdir();
         System.out.println("folder criada? "+isDirectoryCreated);
 
-//        File fileArquivoDirectory = new File("C:\\Users\\PICHAU\\OneDrive\\Documentos\\estudos-java\\Java-DevDojo\\folder\\arquivo.txt");
+//        File fileArquivoDirectory = new File("C:\\Users\\Arthur\\OneDrive\\Documentos\\estudos-java\\Java-DevDojo\\folder\\arquivo.txt");
         File fileArquivoDirectory = new File(fileDirectory, "arquivo.txt");
         boolean isFileCreated = fileArquivoDirectory.createNewFile();
         System.out.println("arquivo.txt criado? "+isFileCreated);
