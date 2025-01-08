@@ -6,7 +6,7 @@ class Counter {
     private int count;
     private AtomicInteger atomicInteger = new AtomicInteger();
 
-    void implement() {
+    void increment() {
         count++;
         atomicInteger.incrementAndGet();
     }
@@ -26,7 +26,7 @@ public class AtomicIntegerTest01 {
 
         Runnable r = () -> {
             for (int i = 0; i < 10000; i++) {
-                counter.implement();
+                counter.increment();
             }
         };
 
