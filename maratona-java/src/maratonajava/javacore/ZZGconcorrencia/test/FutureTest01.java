@@ -13,12 +13,13 @@ public class FutureTest01 {
 
         System.out.println(doSomething());
 
+        Double dollarResponse = null;
         try {
-            Double dollarResponse = dollarRequest.get(3, TimeUnit.SECONDS);
-            System.out.println("Dollar: " + dollarResponse);
+            dollarResponse = dollarRequest.get(3, TimeUnit.SECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        System.out.println("Dollar: " + dollarResponse);
 
         executorService.shutdown();
     }
