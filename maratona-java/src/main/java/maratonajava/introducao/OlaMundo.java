@@ -1,4 +1,4 @@
-package maratonajava.introducao;
+package main.java.maratonajava.introducao;
 
 public class OlaMundo {
     public static void main(String[] args) {

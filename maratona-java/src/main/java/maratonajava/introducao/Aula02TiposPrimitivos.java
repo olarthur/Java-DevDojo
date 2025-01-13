@@ -1,4 +1,4 @@
-package maratonajava.introducao;
+package main.java.maratonajava.introducao;
 
 import java.sql.SQLOutput;
 
