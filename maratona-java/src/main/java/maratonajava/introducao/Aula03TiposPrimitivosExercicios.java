@@ -1,4 +1,4 @@
-package main.java.maratonajava.introducao;
+package maratonajava.introducao;
 
 import java.util.Date;
 
