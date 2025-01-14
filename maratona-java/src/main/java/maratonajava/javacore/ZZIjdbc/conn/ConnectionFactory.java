@@ -7,18 +7,11 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     //java.sql = Connection, Statement, ResultSet, DriveManager
 
-    public static Connection getConnection() {
+    public static Connection getConnection() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/series_store";
         String userName = "root";
         String password = "root";
 
-        try {
-            Connection connection = DriverManager.getConnection(url, userName, password);
-            System.out.println(connection);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        return DriverManager.getConnection(url, userName, password);
     }
 }
