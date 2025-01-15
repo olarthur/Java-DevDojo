@@ -5,8 +5,8 @@ import lombok.Value;
 
 import java.util.Objects;
 
-@Value
-@Builder
+@Value // torna a classe imutavel
+@Builder // cria o builder da classe
 public class Producer {
     private Integer id;
     private String name;
