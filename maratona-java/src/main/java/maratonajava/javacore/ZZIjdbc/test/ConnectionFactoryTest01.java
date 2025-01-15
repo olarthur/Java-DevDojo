@@ -5,6 +5,8 @@ import maratonajava.javacore.ZZIjdbc.dominio.Producer;
 import maratonajava.javacore.ZZIjdbc.repository.ProducerRepository;
 import maratonajava.javacore.ZZIjdbc.service.ProducerService;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
@@ -13,8 +15,10 @@ public class ConnectionFactoryTest01 {
 
 //        ProducerService.save(producer);
 //        ProducerService.delete(3);
-        ProducerService.update(producerToUpdate);
-
+//        ProducerService.update(producerToUpdate);
+        List<Producer> producers = ProducerService.findAll();
+        List<Producer> producers = ProducerService.findByName("Show");
+        log.info("Producers found '{}'", producers);
 
 /*
         log.info("INFO");
