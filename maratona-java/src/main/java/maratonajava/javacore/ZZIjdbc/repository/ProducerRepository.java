@@ -220,4 +220,35 @@ public class ProducerRepository {
             log.error("Error while trying to find all producer ", e);
         }
     }
+
+    public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
+        log.info("Finding Producer by name");
+
+        String sql = "SELECT * FROM series_store.producer WHERE name LIKE '%%%s%%';"
+                .formatted(name);
+        List<Producer> producers = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                rs.updateString("name", rs.getString("name").toUpperCase());
+                rs.updateRow();
+
+                Producer producer = Producer
+                        .builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .build();
+
+                producers.add(producer);
+            }
+
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer ", e);
+        }
+
+        return producers;
+    }
 }
