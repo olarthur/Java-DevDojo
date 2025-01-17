@@ -22,10 +22,12 @@ public class ConnectionFactoryTest01 {
         ProducerService.showProducerMetaData();
         ProducerService.showDriverMetaData();
         ProducerService.showTypeScrollWorking();
+        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Epicuro");
 */
 
-        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Epicuro");
-        log.info("Producers found '{}'", producers);
+//        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("Warner Bros");
+//        log.info("Producers found '{}'", producers);
+        ProducerService.findByNameAndDelete("HB");
 
 /*
         log.info("INFO");

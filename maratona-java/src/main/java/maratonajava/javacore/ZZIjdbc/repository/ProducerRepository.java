@@ -202,7 +202,7 @@ public class ProducerRepository {
 
             log.info("Last row? '{}'", rs.last());
             log.info("-----------------------");
-            while(rs.previous()) {
+            while (rs.previous()) {
                 log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name"))
                         .build());
             }
@@ -211,7 +211,7 @@ public class ProducerRepository {
             log.info("-----------------------");
             rs.next();
             log.info("After last row? '{}'", rs.isAfterLast());
-            while(rs.previous()) {
+            while (rs.previous()) {
                 log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name"))
                         .build());
             }
@@ -222,7 +222,7 @@ public class ProducerRepository {
     }
 
     public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
-        log.info("Finding Producer by name");
+        log.info("Finding Producer by name and update to uppercase");
 
         String sql = "SELECT * FROM series_store.producer WHERE name LIKE '%%%s%%';"
                 .formatted(name);
@@ -234,6 +234,7 @@ public class ProducerRepository {
 
             while (rs.next()) {
                 rs.updateString("name", rs.getString("name").toUpperCase());
+//                rs.cancelRowUpdates();
                 rs.updateRow();
 
                 Producer producer = Producer
@@ -250,5 +251,60 @@ public class ProducerRepository {
         }
 
         return producers;
+    }
+
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
+        log.info("Finding Producer by name and insert when not found");
+
+        String sql = "SELECT * FROM series_store.producer WHERE name LIKE '%%%s%%';"
+                .formatted(name);
+        List<Producer> producers = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            if (rs.next()) return producers;
+
+            insertNewProducer(name, rs);
+            producers.add(getProducer(rs));
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer ", e);
+        }
+
+        return producers;
+    }
+
+    public static void findByNameAndDelete(String name) {
+        log.info("Finding Producer by name and delete");
+
+        String sql = "SELECT * FROM series_store.producer WHERE name LIKE '%%%s%%';"
+                .formatted(name);
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                log.info("Deleting '{}'", rs.getString("name"));
+                rs.deleteRow();
+            }
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer ", e);
+        }
+    }
+
+    private static void insertNewProducer(String name, ResultSet rs) throws SQLException {
+        rs.moveToInsertRow();
+        rs.updateString("name", name);
+        rs.insertRow();
+    }
+
+    private static Producer getProducer(ResultSet rs) throws SQLException {
+        rs.beforeFirst();
+        rs.next();
+        return Producer.builder().id(rs.getInt("id"))
+                .name(rs.getString("name"))
+                .build();
     }
 }
