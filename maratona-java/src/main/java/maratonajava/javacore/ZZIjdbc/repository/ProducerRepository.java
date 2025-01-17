@@ -107,7 +107,7 @@ public class ProducerRepository {
         return producers;
     }
 
-    public static void showProducerMetadata() {
+    public static void showProducerMetaData() {
         log.info("Showing Producer MetaData");
 
         String sql = "SELECT * FROM series_store.producer;";
@@ -117,7 +117,6 @@ public class ProducerRepository {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             ResultSetMetaData rsMetaData = rs.getMetaData();
-            rs.next();
 
             int columnCount = rsMetaData.getColumnCount();
             log.info("Columns count '{}'", columnCount);
@@ -129,6 +128,39 @@ public class ProducerRepository {
                 log.info("Column type '{}'", rsMetaData.getColumnTypeName(i));
             }
 
+        } catch (SQLException e) {
+            log.error("Error while trying to find all producer ", e);
+        }
+
+    }
+
+    public static void showDriverMetaData() {
+        log.info("Showing Driver MetaData");
+
+        try (Connection conn = ConnectionFactory.getConnection()) {
+
+            DatabaseMetaData dbMetaData = conn.getMetaData();
+
+            if (dbMetaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)) {
+                log.info("Supports TYPE_FORWARD_ONLY");
+                if (dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
+                    log.info("And Supports CONCUR_UPDATABLE");
+                }
+            }
+
+            if (dbMetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)) {
+                log.info("Supports TYPE_SCROLL_INSENSITIVE");
+                if (dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+                    log.info("And Supports CONCUR_UPDATABLE");
+                }
+            }
+
+            if (dbMetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)) {
+                log.info("Supports TYPE_SCROLL_SENSITIVE");
+                if (dbMetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+                    log.info("And Supports CONCUR_UPDATABLE");
+                }
+            }
         } catch (SQLException e) {
             log.error("Error while trying to find all producer ", e);
         }
