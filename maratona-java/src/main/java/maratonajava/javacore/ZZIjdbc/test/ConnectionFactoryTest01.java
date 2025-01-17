@@ -13,12 +13,15 @@ public class ConnectionFactoryTest01 {
         Producer producer = Producer.builder().name("HBO Studios").build();
         Producer producerToUpdate = Producer.builder().id(17).name("HBO").build();
 
-//        ProducerService.save(producer);
-//        ProducerService.delete(3);
-//        ProducerService.update(producerToUpdate);
+/*
+        ProducerService.save(producer);
+        ProducerService.delete(3);
+        ProducerService.update(producerToUpdate);
         List<Producer> producers = ProducerService.findAll();
         List<Producer> producers = ProducerService.findByName("Show");
         log.info("Producers found '{}'", producers);
+*/
+        ProducerService.showProducerMetadata();
 
 /*
         log.info("INFO");
