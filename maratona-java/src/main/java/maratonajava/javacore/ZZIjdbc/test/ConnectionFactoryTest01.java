@@ -10,7 +10,7 @@ import java.util.List;
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
         Producer producer = Producer.builder().name("HBO Studios").build();
-        Producer producerToUpdate = Producer.builder().id(17).name("HBO").build();
+        Producer producerToUpdate = Producer.builder().id(2).name("epicuro").build();
 
 /*
         ProducerService.save(producer);
@@ -23,11 +23,13 @@ public class ConnectionFactoryTest01 {
         ProducerService.showDriverMetaData();
         ProducerService.showTypeScrollWorking();
         List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Epicuro");
+        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("Warner Bros");
+        log.info("Producers found '{}'", producers);
+        List<Producer> producers = ProducerService.findByNamePreparedStatement("F or X'='X");
+        List<Producer> producers = ProducerService.findByNamePreparedStatement("F");
+        log.info("Producers found '{}'", producers);
 */
-
-//        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("Warner Bros");
-//        log.info("Producers found '{}'", producers);
-        ProducerService.findByNameAndDelete("HB");
+        ProducerService.updatePreparedStatement(producerToUpdate);
 
 /*
         log.info("INFO");
