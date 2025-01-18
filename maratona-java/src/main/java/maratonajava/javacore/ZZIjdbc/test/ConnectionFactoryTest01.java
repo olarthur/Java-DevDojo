@@ -28,8 +28,10 @@ public class ConnectionFactoryTest01 {
         List<Producer> producers = ProducerService.findByNamePreparedStatement("F or X'='X");
         List<Producer> producers = ProducerService.findByNamePreparedStatement("F");
         log.info("Producers found '{}'", producers);
+         ProducerService.updatePreparedStatement(producerToUpdate);
 */
-        ProducerService.updatePreparedStatement(producerToUpdate);
+        List<Producer> producers = ProducerService.findByNameCallableStatement("F");
+        log.info("Producers found '{}'", producers);
 
 /*
         log.info("INFO");
