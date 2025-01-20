@@ -4,10 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import maratonajava.javacore.ZZJcrud.conn.ConnectionFactory;
 import maratonajava.javacore.ZZJcrud.dominio.Producer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +63,27 @@ public class ProducerRepository {
         String sql = "DELETE FROM `series_store`.`producer` WHERE (`id` = ?);";
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setInt(1, id);
+        return ps;
+    }
+
+    public static void save(Producer producer) {
+        log.info("Saving Producer '{}'", producer);
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = createPrepareStatementSave(conn, producer)) {
+
+            ps.execute();
+        } catch (SQLException e) {
+            log.error("Error while trying to update producer '{}'", producer.getId(), e);
+        }
+    }
+
+    private static PreparedStatement createPrepareStatementSave(Connection conn, Producer producer)
+            throws SQLException {
+        String sql = "INSERT INTO `series_store`.`producer` (`name`) VALUES (?);";
+        PreparedStatement ps = conn.prepareStatement(sql);
+
+        ps.setString(1, producer.getName());
         return ps;
     }
 }
